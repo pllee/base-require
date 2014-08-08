@@ -1,13 +1,13 @@
 var path = require('path'),
     join = path.join,
     rootDir = path.resolve(join(__dirname, '../../')),
-    brConfig, brFileName = 'br', packageJsonNode = 'brDirs'
+    brConfig, brFileName = 'br', packageJsonNode = 'brDirs';
 
 /**
  * Try to read config from br.js or br.json and then look under
  * the package.json to see if it is in the brDirs node
  */
-(function initBrConfig() {
+function initBrConfig() {
     try {
         brConfig = require(join(rootDir, brFileName));
     } catch (e) {
@@ -15,7 +15,9 @@ var path = require('path'),
             brConfig = require(join(rootDir, 'package.json'))[packageJsonNode];
         } catch (e2) {}
     }
-})();
+}
+
+initBrConfig();
 
 
 function getFileName(fileName) {
@@ -24,6 +26,7 @@ function getFileName(fileName) {
         fileSplit = fileName.split('/');
         pathKey = fileSplit.shift();
         pathValue = brConfig[pathKey];
+
         if(pathValue) {
             return join(pathValue, fileSplit.join('/'));
         }
@@ -43,4 +46,4 @@ module.exports = function(fileName) {
 module.exports._setRootDir = function(dir) {
     rootDir = dir;
     initBrConfig();
-}
+};

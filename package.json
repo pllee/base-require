@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/pllee/baseRequire/issues"
   },
-  "homepage": "https://github.com/pllee/baseRequire"
+  "homepage": "https://github.com/pllee/baseRequire",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^1.21.4"
+  }
 }
