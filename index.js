@@ -20,23 +20,14 @@ function initBrConfig() {
 initBrConfig();
 
 
-function getFileName(fileName) {
-    var fileSplit, pathKey, pathValue;
-    if(brConfig) {
-        fileSplit = fileName.split('/');
-        pathKey = fileSplit.shift();
-        pathValue = brConfig[pathKey];
+function getFileName(fileNameOrKey, append) {
+    var configValue = brConfig && brConfig[fileNameOrKey];
 
-        if(pathValue) {
-            return join(pathValue, fileSplit.join('/'));
-        }
-    }
-
-    return fileName;
+    return configValue ? join(configValue, append || '') : fileNameOrKey;
 }
 
-module.exports = function(fileName) {
-    return require(join(rootDir, getFileName(fileName)));
+module.exports = function(fileName, append) {
+    return require(join(rootDir, getFileName(fileName, append)));
 };
 
 /**

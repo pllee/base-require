@@ -1,5 +1,5 @@
 {
-  "name": "baseRequire",
+  "name": "base-require",
   "version": "0.0.0",
   "description": "require files from your base directory",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pllee/baseRequire"
+    "url": "https://github.com/pllee/base-require"
   },
   "keywords": [
     "require"
@@ -16,9 +16,9 @@
   "author": "Patrick Lee <patrick.lorian.lee@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pllee/baseRequire/issues"
+    "url": "https://github.com/pllee/base-require/issues"
   },
-  "homepage": "https://github.com/pllee/baseRequire",
+  "homepage": "https://github.com/pllee/base-require",
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^1.21.4"

@@ -17,11 +17,11 @@ describe('Configured paths', function() {
     });
 
      it('aliased name should work with direct dir and index', function() {
-        expect(br(join(eeAliasedName, 'index'))).to.be(eeValue);
+        expect(br(eeAliasedName, 'index')).to.be(eeValue);
     });
 
     it('aliased name should work with different file', function() {
-        expect(br(join(eeAliasedName, 'a'))).to.be('a');
+        expect(br(eeAliasedName, 'a')).to.be('a');
     });
 
     it('no alias name should work as root require', function() {
